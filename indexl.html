@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" class="parent-container">
+        <input 
+            type="text"
+            placeholder="Enter city name"
+            id="city-name"/>
+        <button>Submit</button>
+    </form>
+    <div id="result" class="result-container"></div>
+    <script>
+        var form=document.getElementById("form")
+        var result=document.getElementById("result")
+        var cityName=document.getElementById("city-name")
+        var apikey=""
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault()
+            var apiurl=`https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${apikey}&units=metric` 
+            fetch(apiurl)
+                .then((res)=>{
+                    console.log(res)
+                    return res.json()
+                })
+                .then((res)=>{
+                    console.log(res)
+                })
+        })
+    </script>
+</body>
+</html>

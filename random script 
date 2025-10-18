@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="generate()">generate password</button>
+    <script>
+        function generate(){
+            var passwordList="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$&", password=[]
+            //console.log(Math.floor(Math.random()*18))
+            //console.log(passwordList.charAt(60))
+            for(i=1;i<=6;i++){
+                var randomNumber=Math.floor(Math.random()*passwordList.length)
+                //console.log(randomNumber)
+                var randomCharacter=passwordList.charAt(randomNumber)
+                password.push(randomCharacter)
+            }
+            password=password.join("")
+            console.log(password)
+        }
+
+
+
+
+        // function add(){
+        //     var a=23,b=3
+        //     console.log(a+b)
+        // } 
+        // add()
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- Math.random()   returns a value in between 0 to 1 
+Math.floor()    removes decimal and returns the interger number 
+
+charAt()    returns what type of character we are having 
+join()      converts an array into a string 
+length      returns the number of characters present in a string 
+
+for(initialization,condition,iteration)
+ -->
